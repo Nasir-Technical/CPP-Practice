@@ -1,31 +1,36 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-// Destructor never takes an arrgument nor does it return any value
-int count=0;
+class Employee
+{
+    int id;
+    int salary;
 
-class num{
-    public:
-       num(){
-        count++;
-        cout<< "This is the time when constructor is called for object number"<<count<<endl;
-       }
-
-       ~num(){
-        cout<<"This is the time when Destructor is called for object number"<<count<<endl;
-        count--;
-       }
-};
-int main(){
-    cout<<"We are inside our main function"<<endl;
-    cout<<"Creating first object n1"<<endl;
-    num n1;
+public:
+    void setId(void)
     {
-        cout<<"Entering this block"<<endl;
-        cout<<"Creating two more objects"<<endl;
-        num n2, n3;
-        cout<<"Exiting this block"<<endl;
+        salary = 122;
+        cout << "Enter the id of employee" << endl;
+        cin >> id;
     }
-    cout<<"Back to main"<<endl;
+
+    void getId(void)
+    {
+        cout << "The id of this employee is " << id << endl;
+    }
+};
+
+int main()
+{
+    // Employee harry, rohan, lovish, shruti;
+    // harry.setId();
+    // harry.getId();
+    Employee fb[4];
+    for (int i = 0; i < 4; i++)
+    {
+        fb[i].setId();
+        fb[i].getId();
+    }
+
     return 0;
 }
